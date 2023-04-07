@@ -1,0 +1,7 @@
+.App {
+    background-color: lightgoldenrodyellow;
+
+    & > p {
+        color: red;
+    }
+}
