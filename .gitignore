@@ -22,3 +22,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Design files
+design
+
+# Docs
+README-fm.md
+README-template.md
+style-guide.md
