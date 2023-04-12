@@ -1,0 +1,12 @@
+import { Todo } from "../@types/todo";
+
+const todos: Todo[] = [
+    { id: 1, task: "Complete online JavaScript Course", completed: true },
+    { id: 2, task: "Jog around the park 3x", completed: false },
+    { id: 3, task: "10 minutes meditation", completed: false },
+    { id: 4, task: "Read for 1 hour", completed: false },
+    { id: 5, task: "Pick up groceries", completed: false },
+    { id: 6, task: "Complete Todo App on Frontend Mentor", completed: false },
+];
+
+export default todos;
