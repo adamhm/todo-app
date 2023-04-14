@@ -1,0 +1,27 @@
+.TodoPanel {
+    width: 540px;
+    height: 610px;
+    margin-top: 70px;
+
+    & > div:first-child {
+        display: flex;
+
+        & p {
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            height: 45px;
+            letter-spacing: .4em;
+        }
+
+        & button {
+            background-color: transparent;
+            border: none;
+            padding: 0;
+            height: 45px;
+            margin-left: auto;
+        }
+    }
+
+
+}
