@@ -1,7 +1,31 @@
-.App {
-    background-color: lightgoldenrodyellow;
+@use '../assets/styles/colors' as *;
 
-    & > p {
-        color: red;
+$desktopWidth: 1440px;
+$desktopHeight: 800px;
+$mobileWidth: 365px;
+$mobileHeight: 765px;
+
+.App {
+    width: $desktopWidth;
+    height: $desktopHeight;
+    background-color: $veryLightGray;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.dark {
+    background-image: url('../assets/images/bg-desktop-dark.jpg');
+    background-repeat: no-repeat;
+}
+
+.light {
+    background-image: url('../assets/images/bg-desktop-light.jpg');
+    background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 768px) {
+    .light {
+        background: none;
     }
 }
