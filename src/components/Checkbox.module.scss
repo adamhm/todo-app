@@ -1,0 +1,36 @@
+%checkboxBase {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+}
+
+.Checkbox {
+    & [type="checkbox"] {
+        @extend %checkboxBase;
+        -webkit-appearance: none;
+        appearance: none;
+        margin: 0 24px;
+        z-index: 1;
+
+        &:checked + span::after {
+            @extend %checkboxBase;
+            content: "";
+            left: 24px;
+            background: url("../assets/icons/icon-check.svg") 7px 7px no-repeat, linear-gradient(to bottom right, hsl(208, 99%, 71%), hsl(270, 100%, 74%));
+        }
+    }
+
+    & span {
+        display: block;
+        height: 24px;
+        position: relative;
+
+        &::before {
+            @extend %checkboxBase;
+            content: "";
+            left: 24px;
+            border: 1px solid lightgray;
+        }
+    }
+}
