@@ -7,16 +7,12 @@
     border-bottom: none;
     list-style: none;
 
-    .test {
-        color: green;
+    p.active {
+        color: black;
     }
-}
 
-.active {
-    color: black;
-}
-
-.completed {
-    color: lightgrey;
-    text-decoration: line-through;
+    p.completed {
+        color: lightgrey;
+        text-decoration: line-through;
+    }
 }
