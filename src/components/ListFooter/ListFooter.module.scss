@@ -1,0 +1,22 @@
+.ListFooter {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    padding: 0 24px;
+    background-color: white;
+    border: 1px solid lightgrey;
+    list-style: none;
+    font-size: 14px;
+    color: lightgrey;
+
+    & :nth-child(2) {
+        flex: 1;
+        text-align: center;
+    }
+
+    & > button {
+        background-color: white;
+        border: none;
+        color: darkgrey;
+    }
+}
