@@ -1,9 +1,11 @@
 import styles from "./TextBox.module.scss";
+import Checkbox from "./Checkbox/Checkbox";
 
 function TextBox() {
     return (
         <div className={styles.TextBox}>
-            <input type="text" />
+            <Checkbox />
+            <input type="text" placeholder="Create a new todo..." />
         </div>
     );
 }
