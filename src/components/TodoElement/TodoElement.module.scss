@@ -1,0 +1,22 @@
+.TodoElement {
+    display: flex;
+    align-items: center;
+    height: 64px;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-bottom: none;
+    list-style: none;
+
+    .test {
+        color: green;
+    }
+}
+
+.active {
+    color: black;
+}
+
+.completed {
+    color: lightgrey;
+    text-decoration: line-through;
+}
