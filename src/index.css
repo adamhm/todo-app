@@ -1,7 +1,5 @@
 :root {
-    font-family: "Josefin Sans", Helvetica, Arial, sans-serif;
-    line-height: 1.5;
-    font-weight: 400;
+    font: 400 18px / 1.5 "Josefin Sans", Helvetica, Arial, sans-serif;
     box-sizing: border-box;
 }
 
