@@ -6,11 +6,12 @@
 }
 
 .Checkbox {
+    width: 72px;
+
     & [type="checkbox"] {
         @extend %checkboxBase;
         -webkit-appearance: none;
         appearance: none;
-        margin: 0 24px;
         z-index: 1;
 
         &:checked + span::after {
