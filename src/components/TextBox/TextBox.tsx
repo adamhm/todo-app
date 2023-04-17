@@ -1,5 +1,5 @@
 import styles from "./TextBox.module.scss";
-import Checkbox from "./Checkbox/Checkbox";
+import Checkbox from "../Checkbox/Checkbox";
 
 function TextBox() {
     return (

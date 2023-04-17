@@ -1,12 +1,12 @@
 import { useContext } from "react";
 
 import styles from "./TodoPanel.module.scss";
-import moonIcon from "../assets/icons/icon-moon.svg";
-import sunIcon from "../assets/icons/icon-sun.svg";
-import ThemeContext from "../contexts/theme-context";
-import TextBox from "./TextBox/TextBox";
-import TodoList from "./TodoList/TodoList";
-import todos from "../data/todos";
+import moonIcon from "../../assets/icons/icon-moon.svg";
+import sunIcon from "../../assets/icons/icon-sun.svg";
+import ThemeContext from "../../contexts/theme-context";
+import TextBox from "../TextBox/TextBox";
+import TodoList from "../TodoList/TodoList";
+import todos from "../../data/todos";
 
 function TodoPanel() {
     const context = useContext(ThemeContext);
