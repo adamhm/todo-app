@@ -1,5 +1,5 @@
-import { useContext } from "react";
-
+import { useContext, useState } from "react";
+import { Todo } from "../../@types/todo";
 import styles from "./TodoPanel.module.scss";
 import moonIcon from "../../assets/icons/icon-moon.svg";
 import sunIcon from "../../assets/icons/icon-sun.svg";
@@ -11,6 +11,7 @@ import todos from "../../data/todos";
 
 function TodoPanel() {
     const context = useContext(ThemeContext);
+    const [todoList, setTodoList] = useState<Todo[]>(todos);
 
     return (
         <article className={styles.TodoPanel}>
@@ -24,7 +25,7 @@ function TodoPanel() {
                 </button>
             </div>
             <TextBox />
-            <TodoList todoList={todos} />
+            <TodoList todoList={todoList} />
         </article>
     );
 }
