@@ -7,11 +7,19 @@ import ThemeContext from "../../contexts/theme-context";
 import todos from "../../data/todos.json";
 import TextBox from "../TextBox/TextBox";
 import TodoList from "../TodoList/TodoList";
-import todos from "../../data/todos";
 
 function TodoPanel() {
     const context = useContext(ThemeContext);
     const [todoList, setTodoList] = useState<Todo[]>(todos);
+    const [lastId, setLastId] = useState<number>(todos.length);
+
+    const addTodoHandler = (task: string) => {
+        setTodoList((prevTodos) => [
+            ...prevTodos,
+            { id: lastId + 1, task, completed: false },
+        ]);
+        setLastId((prevId) => prevId + 1);
+    };
 
     return (
         <article className={styles.TodoPanel}>
@@ -24,7 +32,7 @@ function TodoPanel() {
                     />
                 </button>
             </div>
-            <TextBox />
+            <TextBox onAddTodo={addTodoHandler} />
             <TodoList todoList={todoList} />
         </article>
     );
