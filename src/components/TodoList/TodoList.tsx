@@ -1,7 +1,7 @@
 import { useState } from "react";
+import { Todo } from "@typedefs/todo";
+import { Filter } from "@typedefs/filter";
 import styles from "./TodoList.module.scss";
-import { Todo } from "../../@types/todo";
-import { Filter } from "../../@types/filter";
 import TodoElement from "../TodoElement/TodoElement";
 import ListFooter from "../ListFooter/ListFooter";
 
@@ -30,7 +30,7 @@ function TodoList({ todoList }: Props) {
             ))}
             <ListFooter
                 todos={filteredList}
-                onFilterChange={(filter) => setCurrentFilter(filter)}
+                onFilterChange={(filter: Filter) => setCurrentFilter(filter)}
             />
         </ul>
     );

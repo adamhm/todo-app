@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import { FilterChangeEventHandler } from "../../@types/filter";
+import { FilterChangeEventHandler } from "@typedefs/filter";
 import styles from "./ListFilter.module.scss";
 
 type Props = { onFilterChange: FilterChangeEventHandler };

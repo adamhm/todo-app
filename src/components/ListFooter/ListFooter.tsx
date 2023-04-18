@@ -1,7 +1,7 @@
+import { Todo } from "@typedefs/todo";
+import { FilterChangeEventHandler } from "@typedefs/filter";
 import styles from "./ListFooter.module.scss";
-import { Todo } from "../../@types/todo";
 import ListFilter from "../ListFilter/ListFilter";
-import { FilterChangeEventHandler } from "../../@types/filter";
 
 type Props = { todos: Todo[]; onFilterChange: FilterChangeEventHandler };
 
