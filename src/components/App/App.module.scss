@@ -1,4 +1,4 @@
-@use '../assets/styles/colors' as *;
+@use '../../assets/styles/colors' as *;
 
 $desktopWidth: 1440px;
 $desktopHeight: 800px;
@@ -15,12 +15,12 @@ $mobileHeight: 765px;
 }
 
 .dark {
-    background-image: url('../assets/images/bg-desktop-dark.jpg');
+    background-image: url('../../assets/images/bg-desktop-dark.jpg');
     background-repeat: no-repeat;
 }
 
 .light {
-    background-image: url('../assets/images/bg-desktop-light.jpg');
+    background-image: url('../../assets/images/bg-desktop-light.jpg');
     background-repeat: no-repeat;
 }
 
