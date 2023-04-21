@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { Todo } from "@typedefs/todo";
 import { Filter } from "@typedefs/filter";
+import { TodoElement, ListFooter } from "@components/index";
 import styles from "./TodoList.module.scss";
-import TodoElement from "../TodoElement/TodoElement";
-import ListFooter from "../ListFooter/ListFooter";
 
 type Props = { todoList: Todo[] };
 

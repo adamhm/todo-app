@@ -1,8 +1,8 @@
 import { useMemo, useState } from "react";
-import { Theme } from "../@types/theme";
-import ThemeContext from "../contexts/theme-context";
+import { Theme } from "@typedefs/theme";
+import { TodoPanel } from "@components/index";
+import ThemeContext from "@contexts/theme";
 import styles from "./App.module.scss";
-import TodoPanel from "./TodoPanel/TodoPanel";
 
 function App() {
     const [theme, setTheme] = useState<Theme>("light");

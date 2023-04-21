@@ -1,6 +1,6 @@
 import { Todo } from "@typedefs/todo";
+import { Checkbox } from "@components/index";
 import styles from "./TodoElement.module.scss";
-import Checkbox from "../Checkbox/Checkbox";
 
 type Props = { todo: Todo };
 

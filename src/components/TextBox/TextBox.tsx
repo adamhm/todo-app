@@ -1,6 +1,6 @@
 import { KeyboardEvent, KeyboardEventHandler, createRef } from "react";
+import { Checkbox } from "@components/index";
 import styles from "./TextBox.module.scss";
-import Checkbox from "../Checkbox/Checkbox";
 
 type Props = { onAddTodo: (task: string) => void };
 

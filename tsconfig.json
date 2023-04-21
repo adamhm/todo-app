@@ -15,11 +15,9 @@
         "isolatedModules": true,
         "noEmit": true,
         "jsx": "react-jsx",
-        "noImplicitAny": true,
-        "paths": {
-            "@typedefs/*": ["./src/types/*"]
-        }
+        "noImplicitAny": true
     },
     "include": ["src"],
+    "extends": "./tsconfig.paths.json",
     "references": [{ "path": "./tsconfig.node.json" }]
 }
