@@ -2,8 +2,7 @@ import { useContext, useState } from "react";
 import { Todo } from "@typedefs/todo";
 import { TextBox, TodoList } from "@components/index";
 import ThemeContext from "@contexts/theme";
-import moonIcon from "@assets/icons/icon-moon.svg";
-import sunIcon from "@assets/icons/icon-sun.svg";
+import { MoonIcon, SunIcon } from "@assets/icons";
 import styles from "./TodoPanel.module.scss";
 import todos from "../../data/todos.json";
 
@@ -26,7 +25,7 @@ function TodoPanel() {
                 <p>TODO</p>
                 <button type="button" onClick={context?.toggleTheme}>
                     <img
-                        src={context?.theme === "light" ? moonIcon : sunIcon}
+                        src={context?.theme === "light" ? MoonIcon : SunIcon}
                         alt=""
                     />
                 </button>

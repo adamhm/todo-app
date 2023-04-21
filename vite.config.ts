@@ -8,16 +8,10 @@ import path from "path";
 export default defineConfig({
     resolve: {
         alias: {
-            "@assets": path.resolve(__dirname, ".src/assets/"),
-            "@components/index": path.resolve(
-                __dirname,
-                "./src/components/index.d.ts"
-            ),
-            "@contexts/theme": path.resolve(
-                __dirname,
-                "./src/contexts/theme.d.ts"
-            ),
-            "@typedefs/": path.resolve(__dirname, "./src/types/"),
+            "@assets": path.resolve(__dirname, "./src/assets"),
+            "@components": path.resolve(__dirname, "./src/components"),
+            "@contexts": path.resolve(__dirname, "./src/contexts"),
+            "@typedefs": path.resolve(__dirname, "./src/types"),
         },
     },
     plugins: [
