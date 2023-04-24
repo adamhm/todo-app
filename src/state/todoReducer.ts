@@ -1,6 +1,10 @@
 import { TodoAction, TodoState } from "@typedefs/state";
+import { Todo } from "@typedefs/todo";
 
 function todoReducer(state: TodoState, action: TodoAction): TodoState {
+    let todos: Todo[];
+    let currentTodo: Todo | undefined;
+
     switch (action.type) {
         case "ADD":
             return {
@@ -26,9 +30,15 @@ function todoReducer(state: TodoState, action: TodoAction): TodoState {
                 ...state,
                 todos: state.todos.filter((todo) => !todo.completed),
             };
-        case "TOGGLE":
-            // FIXME (toggle action)
-            return state;
+        case "SETCOMPLETED":
+            todos = [...state.todos];
+            currentTodo = todos.find((todo) => todo.id === action.payload.id);
+            if (currentTodo) currentTodo.completed = action.payload.completed;
+
+            return {
+                ...state,
+                todos,
+            };
         default:
             return state;
     }
