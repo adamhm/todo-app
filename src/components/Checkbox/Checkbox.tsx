@@ -12,7 +12,8 @@ function Checkbox({ checked = false, onChange }: Props) {
             <input
                 type="checkbox"
                 checked={checked}
-                onChange={(e) => onChange?.(e)}
+                readOnly={!onChange}
+                onChange={onChange}
             />
             <span />
         </div>
