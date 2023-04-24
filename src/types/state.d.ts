@@ -8,20 +8,15 @@ type TodoState = {
     currentFilter: Filter;
 };
 
+type TodoAction =
+    | { type: "ADD"; payload: string }
+    | { type: "FILTER"; payload: Filter }
+    | { type: "CLEAR" }
+    | { type: "SETCOMPLETED"; payload: { id: number; completed: boolean } };
+
 type TodoStateContext = {
     state: TodoState;
     dispatch: React.Dispatch<TodoAction>;
 };
-
-type Action<T, P> = {
-    type: T;
-    payload: P;
-};
-
-type TodoAction =
-    | Action<"ADD", string>
-    | Action<"FILTER", Filter>
-    | Action<"CLEAR">
-    | Action<"TOGGLE", number>;
 
 export { TodoState, TodoStateContext, TodoAction };
