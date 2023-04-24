@@ -1,17 +1,16 @@
-import { useState } from "react";
+import { useContext } from "react";
 import { Todo } from "@typedefs/todo";
-import { Filter } from "@typedefs/filter";
 import { TodoElement, ListFooter } from "@components/index";
+import TodoStateContext from "@contexts/todo-state";
 import styles from "./TodoList.module.scss";
 
 type Props = { todoList: Todo[] };
 
 function TodoList({ todoList }: Props) {
-    const [currentFilter, setCurrentFilter] = useState<Filter>("all");
-
+    const todoStateContext = useContext(TodoStateContext);
     let filteredList: Todo[];
 
-    switch (currentFilter) {
+    switch (todoStateContext?.state.currentFilter) {
         case "active":
             filteredList = todoList.filter((todo) => !todo.completed);
             break;
@@ -27,10 +26,7 @@ function TodoList({ todoList }: Props) {
             {filteredList.map((todo) => (
                 <TodoElement todo={todo} key={todo.id} />
             ))}
-            <ListFooter
-                todos={filteredList}
-                onFilterChange={(filter: Filter) => setCurrentFilter(filter)}
-            />
+            <ListFooter todos={filteredList} />
         </ul>
     );
 }

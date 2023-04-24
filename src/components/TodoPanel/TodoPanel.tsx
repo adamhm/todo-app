@@ -1,38 +1,45 @@
-import { useContext, useState } from "react";
-import { Todo } from "@typedefs/todo";
+import { useContext, useMemo, useReducer } from "react";
 import { TextBox, TodoList } from "@components/index";
 import ThemeContext from "@contexts/theme";
+import TodoStateContext from "@contexts/todo-state";
 import { MoonIcon, SunIcon } from "@assets/icons";
 import styles from "./TodoPanel.module.scss";
 import todos from "../../data/todos.json";
+import todoReducer from "../../state/todoReducer";
 
 function TodoPanel() {
-    const context = useContext(ThemeContext);
-    const [todoList, setTodoList] = useState<Todo[]>(todos);
-    const [lastId, setLastId] = useState<number>(todos.length);
+    const themeContext = useContext(ThemeContext);
+    const [state, dispatch] = useReducer(todoReducer, {
+        todos,
+        lastId: todos.length,
+        currentFilter: "all",
+    });
 
-    const addTodoHandler = (task: string) => {
-        setTodoList((prevTodos) => [
-            ...prevTodos,
-            { id: lastId + 1, task, completed: false },
-        ]);
-        setLastId((prevId) => prevId + 1);
-    };
+    const addTodoHandler = (task: string) =>
+        dispatch({ type: "ADD", payload: task });
+
+    const todoStateContext = useMemo(() => ({ state, dispatch }), [state]);
 
     return (
-        <article className={styles.TodoPanel}>
-            <div>
-                <p>TODO</p>
-                <button type="button" onClick={context?.toggleTheme}>
-                    <img
-                        src={context?.theme === "light" ? MoonIcon : SunIcon}
-                        alt=""
-                    />
-                </button>
-            </div>
-            <TextBox onAddTodo={addTodoHandler} />
-            <TodoList todoList={todoList} />
-        </article>
+        <TodoStateContext.Provider value={todoStateContext}>
+            <article className={styles.TodoPanel}>
+                <div>
+                    <p>TODO</p>
+                    <button type="button" onClick={themeContext?.toggleTheme}>
+                        <img
+                            src={
+                                themeContext?.theme === "light"
+                                    ? MoonIcon
+                                    : SunIcon
+                            }
+                            alt=""
+                        />
+                    </button>
+                </div>
+                <TextBox onAddTodo={addTodoHandler} />
+                <TodoList todoList={state.todos} />
+            </article>
+        </TodoStateContext.Provider>
     );
 }
 

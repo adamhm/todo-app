@@ -1,16 +1,24 @@
 import { Todo } from "@typedefs/todo";
-import { FilterChangeEventHandler } from "@typedefs/filter";
 import { ListFilter } from "@components/index";
+import { useContext } from "react";
+import TodoStateContext from "@contexts/todo-state";
 import styles from "./ListFooter.module.scss";
 
-type Props = { todos: Todo[]; onFilterChange: FilterChangeEventHandler };
+type Props = { todos: Todo[] };
 
-function ListFooter({ todos, onFilterChange }: Props) {
+function ListFooter({ todos }: Props) {
+    const context = useContext(TodoStateContext);
+
     return (
         <li className={styles.ListFooter}>
             <p>{`${todos.length} items left`}</p>
-            <ListFilter onFilterChange={onFilterChange} />
-            <button type="button">Clear completed</button>
+            <ListFilter />
+            <button
+                type="button"
+                onClick={() => context?.dispatch({ type: "CLEAR" })}
+            >
+                Clear completed
+            </button>
         </li>
     );
 }

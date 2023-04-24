@@ -1,10 +1,16 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import { FilterChangeEventHandler } from "@typedefs/filter";
+import { useContext } from "react";
+import TodoStateContext from "@contexts/todo-state";
+import Filter from "@typedefs/filter";
 import styles from "./ListFilter.module.scss";
 
-type Props = { onFilterChange: FilterChangeEventHandler };
+function ListFilter() {
+    const context = useContext(TodoStateContext);
 
-function ListFilter({ onFilterChange }: Props) {
+    const changeFilter = (filter: Filter) => {
+        context?.dispatch({ type: "FILTER", payload: filter });
+    };
+
     return (
         <div className={styles.ListFilter}>
             <form action="">
@@ -12,7 +18,7 @@ function ListFilter({ onFilterChange }: Props) {
                     type="radio"
                     name="filter"
                     id="all"
-                    onClick={() => onFilterChange("all")}
+                    onClick={() => changeFilter("all")}
                     defaultChecked
                 />
                 <label htmlFor="all">All</label>
@@ -20,14 +26,14 @@ function ListFilter({ onFilterChange }: Props) {
                     type="radio"
                     name="filter"
                     id="active"
-                    onClick={() => onFilterChange("active")}
+                    onClick={() => changeFilter("active")}
                 />
                 <label htmlFor="active">Active</label>
                 <input
                     type="radio"
                     name="filter"
                     id="completed"
-                    onClick={() => onFilterChange("completed")}
+                    onClick={() => changeFilter("completed")}
                 />
                 <label htmlFor="completed">Completed</label>
             </form>
