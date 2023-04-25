@@ -1,13 +1,13 @@
 .ListFooter {
-    margin-top: auto;
     display: flex;
     align-items: center;
-    height: 50px;
+    flex: 0 0 50px;
     padding: 0 24px;
-    background-color: transparent;
-    border-top: 1px solid lightgrey;
+    border: 1px solid lightgrey;
+    border-radius: 0 0 6px 6px;
     list-style: none;
     font-size: 14px;
+    background-color: white;
     color: lightgrey;
 
     & :nth-child(2) {

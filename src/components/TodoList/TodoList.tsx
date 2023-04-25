@@ -4,22 +4,13 @@ import { TodoElement, ListFooter } from "@components/index";
 import TodoStateContext from "@contexts/todo-state";
 import styles from "./TodoList.module.scss";
 
-type Props = { todoList: Todo[] };
+type Props = { filteredList: Todo[] };
 
 function TodoList({ todoList }: Props) {
     const todoStateContext = useContext(TodoStateContext);
     let filteredList: Todo[];
 
-    switch (todoStateContext?.state.currentFilter) {
-        case "active":
-            filteredList = todoList.filter((todo) => !todo.completed);
-            break;
-        case "completed":
-            filteredList = todoList.filter((todo) => todo.completed);
-            break;
-        default:
-            filteredList = [...todoList];
-    }
+function TodoList({ filteredList }: Props) {
 
     return (
         <ul className={styles.TodoList}>
