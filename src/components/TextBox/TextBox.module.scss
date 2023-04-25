@@ -1,12 +1,14 @@
 .TextBox {
     display: flex;
     align-items: center;
-    height: 64px;
-    margin-top: 40px;
+    flex: 0 0 64px;
+    margin-top: 35px;
     background-color: #fff;
     border-radius: 6px;
 
     & [type="text"] {
+        height: 40px;
+        margin-right: 24px;
         width: 100%;
         border-radius: 6px;
         border: none;

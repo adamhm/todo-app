@@ -3,16 +3,16 @@
     flex-flow: column nowrap;
     width: 540px;
     height: 610px;
-    margin-top: 70px;
+    margin-top: 63px;
 
     & > div:first-child {
         display: flex;
+        align-items: center;
 
         & p {
             color: white;
             font-size: 40px;
             font-weight: bold;
-            height: 45px;
             letter-spacing: .4em;
         }
 
