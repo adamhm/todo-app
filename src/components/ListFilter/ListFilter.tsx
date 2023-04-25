@@ -13,7 +13,7 @@ function ListFilter() {
 
     return (
         <div className={styles.ListFilter}>
-            <form action="">
+            <form action="" aria-label="filter">
                 <input
                     type="radio"
                     name="filter"

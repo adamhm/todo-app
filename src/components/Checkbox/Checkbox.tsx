@@ -12,7 +12,7 @@ function Checkbox({ checked = false, onChange }: Props) {
             <input
                 type="checkbox"
                 checked={checked}
-                readOnly={!onChange}
+                disabled={!onChange}
                 onChange={onChange}
             />
             <span />

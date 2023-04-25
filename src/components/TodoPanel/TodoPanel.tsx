@@ -39,7 +39,11 @@ function TodoPanel() {
             <article className={styles.TodoPanel}>
                 <div>
                     <p>TODO</p>
-                    <button type="button" onClick={themeContext?.toggleTheme}>
+                    <button
+                        type="button"
+                        onClick={themeContext?.toggleTheme}
+                        aria-label="change theme"
+                    >
                         <img
                             src={
                                 themeContext?.theme === "light"
