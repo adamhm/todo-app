@@ -12,7 +12,8 @@ type TodoAction =
     | { type: "ADD"; payload: string }
     | { type: "FILTER"; payload: Filter }
     | { type: "CLEAR" }
-    | { type: "SETCOMPLETED"; payload: { id: number; completed: boolean } };
+    | { type: "SETCOMPLETED"; payload: { id: number; completed: boolean } }
+    | { type: "REMOVE"; payload: number };
 
 type TodoStateContext = {
     state: TodoState;

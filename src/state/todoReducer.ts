@@ -39,6 +39,11 @@ function todoReducer(state: TodoState, action: TodoAction): TodoState {
                 ...state,
                 todos,
             };
+        case "REMOVE":
+            return {
+                ...state,
+                todos: state.todos.filter((todo) => todo.id !== action.payload),
+            };
         default:
             return state;
     }
