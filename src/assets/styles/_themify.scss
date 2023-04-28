@@ -1,0 +1,8 @@
+@use 'theme-dark';
+@use 'theme-light';
+
+@function getThemedValue($theme, $component, $key) {
+    $themes: (dark: theme-dark.$theme, light: theme-light.$theme );
+
+    @return map-get($themes, $theme, $component, $key);
+}
