@@ -12,11 +12,7 @@ function App() {
 
     return (
         <ThemeContext.Provider value={context}>
-            <div
-                className={`${styles.App} ${
-                    theme === "light" ? styles.light : styles.dark
-                }`}
-            >
+            <div className={`${styles.App} ${styles[theme]}`}>
                 <TodoPanel />
             </div>
         </ThemeContext.Provider>

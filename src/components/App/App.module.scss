@@ -1,4 +1,4 @@
-@use '../../assets/styles/colors' as *;
+@import '@assets/styles/themify';
 
 $desktopWidth: 1440px;
 $desktopHeight: 800px;
@@ -8,19 +8,21 @@ $mobileHeight: 765px;
 .App {
     width: $desktopWidth;
     height: $desktopHeight;
-    background-color: $veryLightGray;
+
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
 }
 
 .dark {
-    background-image: url('../../assets/images/bg-desktop-dark.jpg');
+    background-color: getThemedValue(dark, App, bg-color);
+    background-image: getThemedValue(dark, App, bg-image);
     background-repeat: no-repeat;
 }
 
 .light {
-    background-image: url('../../assets/images/bg-desktop-light.jpg');
+    background-color: getThemedValue(light, App, bg-color);
+    background-image: getThemedValue(light, App, bg-image);
     background-repeat: no-repeat;
 }
 
