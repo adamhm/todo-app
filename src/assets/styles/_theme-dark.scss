@@ -8,5 +8,6 @@ $veryDarkGrayishBlue2: hsl(237, 14%, 26%);
 
 $theme: (
     App: (bg-image: url('@assets/images/bg-desktop-dark.jpg'),
-        bg-color: hsl(240, 20%, 12%))
+        bg-color: hsl(240, 20%, 12%)),
+    TodoList: (bg-color: hsl(235, 24%, 19%), scrollbar-color: hsla(273, 73%, 64%, 0.5) transparent, scrollbar-bg: hsla(273, 73%, 64%, 0.5))
 );

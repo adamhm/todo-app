@@ -1,15 +1,15 @@
+@import '@assets/styles/themify';
+
 .TodoList {
     margin-top: 22px;
     padding: 0;
     flex: 0 0 390px;
     display: flex;
     flex-direction: column;
-    background: white;
     border-bottom: none;
     border-radius: 6px 6px 0 0;
     overflow-y: auto;
     scrollbar-width: thin;
-    scrollbar-color: hsla(273, 73%, 64%, 0.5) transparent;
 
     &::-webkit-scrollbar {
         width: 8px;
@@ -20,12 +20,29 @@
     }
 
     &::-webkit-scrollbar-thumb {
-        background-color: hsla(273, 73%, 64%, 0.5);
         border-radius: 6px;
         border: transparent;
     }
 
     &.full li:last-child {
         border-bottom: none;
+    }
+}
+
+.light {
+    background-color: getThemedValue(light, TodoList, bg-color);
+    scrollbar-color: getThemedValue(light, TodoList, scrollbar-color);
+
+    &::-webkit-scrollbar-thumb {
+        background-color: getThemedValue(light, TodoList, scrollbar-bg);
+    }
+}
+
+.dark {
+    background-color: getThemedValue(dark, TodoList, bg-color);
+    scrollbar-color: getThemedValue(dark, TodoList, scrollbar-color);
+
+    &::-webkit-scrollbar-thumb {
+        background-color: getThemedValue(dark, TodoList, scrollbar-bg);
     }
 }
