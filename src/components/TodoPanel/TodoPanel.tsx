@@ -9,7 +9,7 @@ import todos from "../../data/todos.json";
 import todoReducer from "../../state/todoReducer";
 
 function TodoPanel() {
-    const themeContext = useContext(ThemeContext);
+    const { theme, toggleTheme } = useContext(ThemeContext);
     const [state, dispatch] = useReducer(todoReducer, {
         todos,
         lastId: todos.length,
@@ -41,15 +41,11 @@ function TodoPanel() {
                     <p>TODO</p>
                     <button
                         type="button"
-                        onClick={themeContext?.toggleTheme}
+                        onClick={toggleTheme}
                         aria-label="change theme"
                     >
                         <img
-                            src={
-                                themeContext?.theme === "light"
-                                    ? MoonIcon
-                                    : SunIcon
-                            }
+                            src={theme === "light" ? MoonIcon : SunIcon}
                             alt=""
                         />
                     </button>
