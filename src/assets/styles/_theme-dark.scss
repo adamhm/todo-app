@@ -10,4 +10,5 @@ $theme: (
     App: (bg-image: url('@assets/images/bg-desktop-dark.jpg'),
         bg-color: hsl(240, 20%, 12%)),
     Checkbox: (border-color: $veryDarkGrayishBlue2),
+    TodoElement: (text-active: hsl(235, 28%, 83%), text-completed: $veryDarkGrayishBlue1, separator: $veryDarkGrayishBlue2)
 );

@@ -3,19 +3,21 @@ import { Checkbox } from "@components/index";
 import { useContext } from "react";
 import TodoStateContext from "@contexts/todo-state";
 import { CrossIcon } from "@assets/icons";
+import ThemeContext from "@contexts/theme";
 import styles from "./TodoElement.module.scss";
 
 type Props = { todo: Todo };
 
 function TodoElement({ todo }: Props) {
-    const context = useContext(TodoStateContext);
+    const todoStateContext = useContext(TodoStateContext);
+    const { theme } = useContext(ThemeContext);
 
     return (
-        <li className={styles.TodoElement}>
+        <li className={`${styles.TodoElement} ${styles[theme]}`}>
             <Checkbox
                 checked={todo.completed}
                 onChange={(e) =>
-                    context?.dispatch({
+                    todoStateContext?.dispatch({
                         type: "SETCOMPLETED",
                         payload: { id: todo.id, completed: e.target.checked },
                     })
@@ -29,7 +31,7 @@ function TodoElement({ todo }: Props) {
                 title="remove todo"
                 aria-label="remove todo"
                 onClick={() =>
-                    context?.dispatch({
+                    todoStateContext?.dispatch({
                         type: "REMOVE",
                         payload: todo.id,
                     })

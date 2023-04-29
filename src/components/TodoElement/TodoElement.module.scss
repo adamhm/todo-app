@@ -1,18 +1,14 @@
+@import '@assets/styles/themify';
+
 .TodoElement {
     padding-right: 24px;
     display: flex;
     align-items: center;
     flex: 0 0 65px;
     background-color: transparent;
-    border-bottom: 1px solid lightgray;
     list-style: none;
 
-    p.active {
-        color: black;
-    }
-
     p.completed {
-        color: lightgrey;
         text-decoration: line-through;
     }
 
@@ -28,5 +24,29 @@
     &:hover button,
     button:focus-visible {
         opacity: 1;
+    }
+}
+
+.light {
+    border-bottom: 1px solid getThemedValue(light, TodoElement, separator);
+
+    p.active {
+        color: getThemedValue(light, TodoElement, text-active);
+    }
+
+    p.completed {
+        color: getThemedValue(light, TodoElement, text-completed);
+    }
+}
+
+.dark {
+    border-bottom: 1px solid getThemedValue(dark, TodoElement, separator);
+
+    p.active {
+        color: getThemedValue(dark, TodoElement, text-active);
+    }
+
+    p.completed {
+        color: getThemedValue(dark, TodoElement, text-completed);
     }
 }

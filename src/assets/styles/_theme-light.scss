@@ -8,4 +8,5 @@ $theme: (
     App: (bg-image: url('@assets/images/bg-desktop-light.jpg'),
         bg-color: $veryLightGray ),
     Checkbox: (border-color: $lightGrayishBlue),
+    TodoElement: (text-active: $veryDarkGrayishBlue, text-completed: $lightGrayishBlue, separator: $lightGrayishBlue)
 );
