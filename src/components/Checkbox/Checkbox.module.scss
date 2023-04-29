@@ -1,3 +1,5 @@
+@import '@assets/styles/themify';
+
 %checkboxBase {
     position: absolute;
     left: 24px;
@@ -33,7 +35,23 @@
             @extend %checkboxBase;
             content: "";
             left: 24px;
-            border: 1px solid lightgray;
+            //border: 1px solid lightgray;
+        }
+    }
+}
+
+.light {
+    & span {
+        &::before {
+            border: 1px solid getThemedValue(light, Checkbox, border-color);
+        }
+    }
+}
+
+.dark {
+    & span {
+        &::before {
+            border: 1px solid getThemedValue(dark, Checkbox, border-color);
         }
     }
 }

@@ -1,4 +1,5 @@
-import { ChangeEventHandler } from "react";
+import { ChangeEventHandler, useContext } from "react";
+import ThemeContext from "@contexts/theme";
 import styles from "./Checkbox.module.scss";
 
 type Props = {
@@ -7,8 +8,10 @@ type Props = {
 };
 
 function Checkbox({ checked = false, onChange }: Props) {
+    const { theme } = useContext(ThemeContext);
+
     return (
-        <div className={styles.Checkbox}>
+        <div className={`${styles.Checkbox} ${styles[theme]}`}>
             <input
                 type="checkbox"
                 checked={checked}
