@@ -10,7 +10,7 @@ $theme: (
     App: (bg-image: url('@assets/images/bg-desktop-dark.jpg'),
         bg-color: hsl(240, 20%, 12%)),
     Checkbox: (border-color: $veryDarkGrayishBlue2),
-    ListFooter: (bg-color: hsl(235, 24%, 19%), text-color: $darkGrayishBlue, text-hover: $veryDarkGrayishBlue2, separator: $veryDarkGrayishBlue2),
+    ListFooter: (bg-color: hsl(235, 24%, 19%), text-color: $darkGrayishBlue, text-hover: hsl(235, 28%, 83%), separator: $veryDarkGrayishBlue2),
     ListFilter: (text-hover: hsl(235, 28%, 83%)),
     TodoList: (bg-color: hsl(235, 24%, 19%), scrollbar-color: hsla(273, 73%, 64%, 0.5) transparent, scrollbar-bg: hsla(273, 73%, 64%, 0.5)),
     TodoElement: (text-active: hsl(235, 28%, 83%), text-completed: $veryDarkGrayishBlue1, separator: $veryDarkGrayishBlue2)
