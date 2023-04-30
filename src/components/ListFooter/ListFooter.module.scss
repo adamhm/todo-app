@@ -1,14 +1,13 @@
+@import '@assets/styles/themify';
+
 .ListFooter {
     display: flex;
     align-items: center;
     flex: 0 0 50px;
     padding: 0 24px;
-    border-top: 1px solid lightgrey;
     border-radius: 0 0 6px 6px;
     list-style: none;
     font-size: 14px;
-    background-color: white;
-    color: lightgrey;
     box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.2);
 
     & :nth-child(2) {
@@ -20,6 +19,35 @@
         height: 21px;
         background-color: white;
         border: none;
-        color: darkgrey;
+    }
+}
+
+.light {
+    background-color: getThemedValue(light, ListFooter, bg-color);
+    color: getThemedValue(light, ListFooter, text-color);
+    border-top: 1px solid getThemedValue(light, ListFooter, separator);
+
+    & > button {
+        background-color: getThemedValue(light, ListFooter, bg-color);
+        color: getThemedValue(light, ListFooter, text-color);
+
+        &:hover {
+            color: getThemedValue(light, ListFooter, text-hover)
+        }
+    }
+}
+
+.dark {
+    background-color: getThemedValue(dark, ListFooter, bg-color);
+    color: getThemedValue(dark, ListFooter, text-color);
+    border-top: 1px solid getThemedValue(dark, ListFooter, separator);
+
+    & > button {
+        background-color: getThemedValue(dark, ListFooter, bg-color);
+        color: getThemedValue(dark, ListFooter, text-color);
+
+        &:hover {
+            color: getThemedValue(dark, ListFooter, text-hover)
+        }
     }
 }
