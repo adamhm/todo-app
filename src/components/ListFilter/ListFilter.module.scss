@@ -1,3 +1,5 @@
+@import '@assets/styles/themify';
+
 .ListFilter {
     label {
         padding: 0 10px;
@@ -20,5 +22,17 @@
     form:has(:focus-visible) {
         border-radius: 2px;
         outline: 2px solid black;
+    }
+}
+
+.light {
+    label:hover {
+        color: getThemedValue(light, ListFilter, text-hover);
+    }
+}
+
+.dark {
+    label:hover {
+        color: getThemedValue(dark, ListFilter, text-hover);
     }
 }

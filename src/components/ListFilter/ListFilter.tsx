@@ -2,17 +2,19 @@
 import { useContext } from "react";
 import TodoStateContext from "@contexts/todo-state";
 import Filter from "@typedefs/filter";
+import ThemeContext from "@contexts/theme";
 import styles from "./ListFilter.module.scss";
 
 function ListFilter() {
     const context = useContext(TodoStateContext);
+    const { theme } = useContext(ThemeContext);
 
     const changeFilter = (filter: Filter) => {
         context?.dispatch({ type: "FILTER", payload: filter });
     };
 
     return (
-        <div className={styles.ListFilter}>
+        <div className={`${styles.ListFilter} ${styles[theme]}`}>
             <form action="" aria-label="filter">
                 <input
                     type="radio"
