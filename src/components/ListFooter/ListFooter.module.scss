@@ -1,4 +1,4 @@
-@import '@assets/styles/themify';
+@import "@assets/styles/themify";
 
 .ListFooter {
     display: flex;
@@ -32,7 +32,7 @@
         color: getThemedValue(light, ListFooter, text-color);
 
         &:hover {
-            color: getThemedValue(light, ListFooter, text-hover)
+            color: getThemedValue(light, ListFooter, text-hover);
         }
     }
 }
@@ -47,7 +47,7 @@
         color: getThemedValue(dark, ListFooter, text-color);
 
         &:hover {
-            color: getThemedValue(dark, ListFooter, text-hover)
+            color: getThemedValue(dark, ListFooter, text-hover);
         }
     }
 }
