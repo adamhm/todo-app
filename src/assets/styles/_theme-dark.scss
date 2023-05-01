@@ -7,12 +7,34 @@ $veryDarkGrayishBlue1: hsl(233, 14%, 35%);
 $veryDarkGrayishBlue2: hsl(237, 14%, 26%);
 
 $theme: (
-    App: (bg-image: url('@assets/images/bg-desktop-dark.jpg'),
-        bg-color: hsl(240, 20%, 12%)),
-    Checkbox: (border-color: $veryDarkGrayishBlue2),
-    ListFooter: (bg-color: hsl(235, 24%, 19%), text-color: $darkGrayishBlue, text-hover: hsl(235, 28%, 83%), separator: $veryDarkGrayishBlue2),
-    ListFilter: (text-hover: hsl(235, 28%, 83%)),
-    TextBox: (bg-color: $veryDarkDesaturatedBlue, text-color: hsl(235, 28%, 83%)),
-    TodoList: (bg-color: hsl(235, 24%, 19%), scrollbar-color: hsla(273, 73%, 64%, 0.5) transparent, scrollbar-bg: hsla(273, 73%, 64%, 0.5)),
-    TodoElement: (text-active: hsl(235, 28%, 83%), text-completed: $veryDarkGrayishBlue1, separator: $veryDarkGrayishBlue2)
+    App: (
+        bg-image: url("@assets/images/bg-desktop-dark.jpg"),
+        bg-color: hsl(240, 20%, 12%),
+    ),
+    Checkbox: (
+        border-color: $veryDarkGrayishBlue2,
+    ),
+    ListFooter: (
+        bg-color: hsl(235, 24%, 19%),
+        text-color: $darkGrayishBlue,
+        text-hover: hsl(235, 28%, 83%),
+        separator: $veryDarkGrayishBlue2,
+    ),
+    ListFilter: (
+        text-hover: hsl(235, 28%, 83%),
+    ),
+    TextBox: (
+        bg-color: $veryDarkDesaturatedBlue,
+        text-color: hsl(235, 28%, 83%),
+    ),
+    TodoList: (
+        bg-color: hsl(235, 24%, 19%),
+        scrollbar-color: hsla(273, 73%, 64%, 0.5) transparent,
+        scrollbar-bg: hsla(273, 73%, 64%, 0.5),
+    ),
+    TodoElement: (
+        text-active: hsl(235, 28%, 83%),
+        text-completed: $veryDarkGrayishBlue1,
+        separator: $veryDarkGrayishBlue2,
+    ),
 );
