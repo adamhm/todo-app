@@ -1,9 +1,11 @@
+@import '@assets/styles/themify';
+
 .TextBox {
     display: flex;
     align-items: center;
     flex: 0 0 64px;
     margin-top: 35px;
-    background-color: #fff;
+
     border-radius: 6px;
 
     & [type="text"] {
@@ -13,5 +15,23 @@
         border-radius: 6px;
         border: none;
         font-size: 18px;
+    }
+}
+
+.light {
+    background-color: getThemedValue(light, TextBox, bg-color);
+
+    & [type="text"] {
+        background-color: getThemedValue(light, TextBox, bg-color);
+        color: getThemedValue(light, TextBox, text-color);
+    }
+}
+
+.dark {
+    background-color: getThemedValue(dark, TextBox, bg-color);
+
+    & [type="text"] {
+        background-color: getThemedValue(dark, TextBox, bg-color);
+        color: getThemedValue(dark, TextBox, text-color);
     }
 }

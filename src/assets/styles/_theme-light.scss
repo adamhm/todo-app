@@ -10,6 +10,7 @@ $theme: (
     Checkbox: (border-color: $lightGrayishBlue),
     ListFooter: (bg-color: white, text-color: $darkGrayishBlue, text-hover: $veryDarkGrayishBlue, separator: $lightGrayishBlue),
     ListFilter: (text-hover: $veryDarkGrayishBlue),
+    TextBox: (bg-color: white, text-color: $veryDarkGrayishBlue),
     TodoList: (bg-color: white, scrollbar-color: hsla(273, 73%, 64%, 0.5) transparent, scrollbar-bg: hsla(273, 73%, 64%, 0.5)),
     TodoElement: (text-active: $veryDarkGrayishBlue, text-completed: $lightGrayishBlue, separator: $lightGrayishBlue)
 );
