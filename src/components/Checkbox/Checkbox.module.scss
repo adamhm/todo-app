@@ -12,7 +12,7 @@
     position: relative;
     width: 72px;
 
-    & [type="checkbox"] {
+    [type="checkbox"] {
         @extend %checkboxBase;
         -webkit-appearance: none;
         appearance: none;
@@ -27,7 +27,7 @@
         }
     }
 
-    & span {
+    span {
         display: block;
         height: 24px;
         position: relative;
@@ -41,10 +41,8 @@
 }
 
 .light {
-    & span {
-        &::before {
-            border: 1px solid getThemedValue(light, Checkbox, border-color);
-        }
+    span::before {
+        border: 1px solid getThemedValue(light, Checkbox, border-color);
     }
 
     [type="checkbox"]:not(:disabled):hover + span::before {
@@ -53,10 +51,8 @@
 }
 
 .dark {
-    & span {
-        &::before {
-            border: 1px solid getThemedValue(dark, Checkbox, border-color);
-        }
+    span::before {
+        border: 1px solid getThemedValue(dark, Checkbox, border-color);
     }
 
     [type="checkbox"]:not(:disabled):hover + span::before {
