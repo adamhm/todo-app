@@ -4,10 +4,11 @@ import styles from "./Checkbox.module.scss";
 
 type Props = {
     checked?: boolean;
+    labelId?: string;
     onChange?: ChangeEventHandler<HTMLInputElement>;
 };
 
-function Checkbox({ checked = false, onChange }: Props) {
+function Checkbox({ checked = false, labelId, onChange }: Props) {
     const { theme } = useContext(ThemeContext);
 
     return (
@@ -17,6 +18,7 @@ function Checkbox({ checked = false, onChange }: Props) {
                 checked={checked}
                 disabled={!onChange}
                 onChange={onChange}
+                aria-labelledby={labelId}
             />
             <span />
         </div>

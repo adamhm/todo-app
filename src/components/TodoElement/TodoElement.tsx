@@ -1,6 +1,6 @@
 import { Todo } from "@typedefs/todo";
 import { Checkbox } from "@components/index";
-import { useContext } from "react";
+import { useContext, useId } from "react";
 import TodoStateContext from "@contexts/todo-state";
 import { CrossIcon } from "@assets/icons";
 import ThemeContext from "@contexts/theme";
@@ -11,11 +11,13 @@ type Props = { todo: Todo };
 function TodoElement({ todo }: Props) {
     const todoStateContext = useContext(TodoStateContext);
     const { theme } = useContext(ThemeContext);
+    const id = useId();
 
     return (
         <li className={`${styles.TodoElement} ${styles[theme]}`}>
             <Checkbox
                 checked={todo.completed}
+                labelId={id}
                 onChange={(e) =>
                     todoStateContext?.dispatch({
                         type: "SETCOMPLETED",
@@ -23,7 +25,10 @@ function TodoElement({ todo }: Props) {
                     })
                 }
             />
-            <p className={todo.completed ? styles.completed : styles.active}>
+            <p
+                id={id}
+                className={todo.completed ? styles.completed : styles.active}
+            >
                 {todo.task}
             </p>
             <button
