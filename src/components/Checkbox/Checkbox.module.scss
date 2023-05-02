@@ -46,6 +46,10 @@
             border: 1px solid getThemedValue(light, Checkbox, border-color);
         }
     }
+
+    [type="checkbox"]:not(:disabled):hover + span::before {
+        border-color: getThemedValue(light, Checkbox, border-color-hover);
+    }
 }
 
 .dark {
@@ -53,5 +57,9 @@
         &::before {
             border: 1px solid getThemedValue(dark, Checkbox, border-color);
         }
+    }
+
+    [type="checkbox"]:not(:disabled):hover + span::before {
+        border-color: getThemedValue(dark, Checkbox, border-color-hover);
     }
 }
