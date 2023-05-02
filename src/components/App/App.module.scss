@@ -1,17 +1,11 @@
 @import "@assets/styles/themify";
 
-$desktopWidth: 1440px;
-$desktopHeight: 800px;
-$mobileWidth: 365px;
-$mobileHeight: 765px;
-
 .App {
-    width: $desktopWidth;
-    height: $desktopHeight;
-
+    height: 100%;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
+    background-size: 100% 300px;
 }
 
 .dark {
