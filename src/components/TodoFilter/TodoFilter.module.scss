@@ -1,0 +1,20 @@
+@import "@assets/styles/themify";
+
+.TodoFilter {
+    margin-top: 16px;
+    flex: 0 0 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+}
+
+.light {
+    background-color: getThemedValue(light, TodoFilter, bg-color);
+    color: getThemedValue(light, TodoFilter, text-color);
+}
+
+.dark {
+    background-color: getThemedValue(dark, TodoFilter, bg-color);
+    color: getThemedValue(dark, TodoFilter, text-color);
+}

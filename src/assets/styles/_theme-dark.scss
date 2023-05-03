@@ -28,6 +28,10 @@ $theme: (
         bg-color: $veryDarkDesaturatedBlue,
         text-color: hsl(235, 28%, 83%),
     ),
+    TodoFilter: (
+        bg-color: $veryDarkDesaturatedBlue,
+        text-color: $darkGrayishBlue,
+    ),
     TodoList: (
         bg-color: hsl(235, 24%, 19%),
         scrollbar-color: hsla(273, 73%, 64%, 0.5) transparent,
