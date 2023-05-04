@@ -1,5 +1,5 @@
 import { useContext, useMemo, useReducer } from "react";
-import { ListFooter, TextBox, TodoList } from "@components/index";
+import { ListFooter, TextBox, TodoFilter, TodoList } from "@components/index";
 import ThemeContext from "@contexts/theme";
 import TodoStateContext from "@contexts/todo-state";
 import { MoonIcon, SunIcon } from "@assets/icons";
@@ -7,6 +7,7 @@ import { Todo } from "@typedefs/todo";
 import styles from "./TodoPanel.module.scss";
 import todos from "../../data/todos.json";
 import todoReducer from "../../state/todoReducer";
+import useMobileView from "../../hooks/use-mobile-view";
 
 function TodoPanel() {
     const { theme, toggleTheme } = useContext(ThemeContext);
@@ -15,6 +16,7 @@ function TodoPanel() {
         lastId: todos.length,
         currentFilter: "all",
     });
+    const isMobileView = useMobileView(768);
 
     const addTodoHandler = (task: string) =>
         dispatch({ type: "ADD", payload: task });
@@ -38,7 +40,7 @@ function TodoPanel() {
         <TodoStateContext.Provider value={todoStateContext}>
             <article className={styles.TodoPanel}>
                 <div>
-                    <p>TODO</p>
+                    <h1>TODO</h1>
                     <button
                         type="button"
                         onClick={toggleTheme}
@@ -53,6 +55,7 @@ function TodoPanel() {
                 <TextBox onAddTodo={addTodoHandler} />
                 <TodoList filteredList={filteredList} />
                 <ListFooter filteredList={filteredList} />
+                {isMobileView && <TodoFilter />}
             </article>
         </TodoStateContext.Provider>
     );
