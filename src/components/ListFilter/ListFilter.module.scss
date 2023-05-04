@@ -25,14 +25,16 @@
     }
 }
 
-.light {
-    label:hover {
-        color: getThemedValue(light, ListFilter, text-hover);
+@media screen and (min-width: 769px) {
+    .light {
+        label:hover {
+            color: getThemedValue(light, ListFilter, text-hover);
+        }
     }
-}
 
-.dark {
-    label:hover {
-        color: getThemedValue(dark, ListFilter, text-hover);
+    .dark {
+        label:hover {
+            color: getThemedValue(dark, ListFilter, text-hover);
+        }
     }
 }
