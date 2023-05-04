@@ -1,10 +1,13 @@
 @import "@assets/styles/themify";
 
+$boxSize: 24px;
+$boxSize-mobile: 20px;
+
 %checkboxBase {
     position: absolute;
-    left: 24px;
-    width: 24px;
-    height: 24px;
+    left: $boxSize;
+    width: $boxSize;
+    height: $boxSize;
     border-radius: 50%;
 }
 
@@ -21,7 +24,6 @@
         &:checked + span::after {
             @extend %checkboxBase;
             content: "";
-            left: 24px;
             background: url("../../assets/icons/icon-check.svg") 7px 7px no-repeat,
                 linear-gradient(to bottom right, hsl(208, 99%, 71%), hsl(270, 100%, 74%));
         }
@@ -29,13 +31,12 @@
 
     span {
         display: block;
-        height: 24px;
+        height: $boxSize;
         position: relative;
 
         &::before {
             @extend %checkboxBase;
             content: "";
-            left: 24px;
         }
     }
 }
@@ -44,18 +45,54 @@
     span::before {
         border: 1px solid getThemedValue(light, Checkbox, border-color);
     }
-
-    [type="checkbox"]:not(:disabled):hover + span::before {
-        border-color: getThemedValue(light, Checkbox, border-color-hover);
-    }
 }
 
 .dark {
     span::before {
         border: 1px solid getThemedValue(dark, Checkbox, border-color);
     }
+}
 
-    [type="checkbox"]:not(:disabled):hover + span::before {
-        border-color: getThemedValue(dark, Checkbox, border-color-hover);
+@media screen and (min-width: 769px) {
+    .light {
+        [type="checkbox"]:not(:disabled):hover + span::before {
+            border-color: getThemedValue(light, Checkbox, border-color-hover);
+        }
+    }
+
+    .dark {
+        [type="checkbox"]:not(:disabled):hover + span::before {
+            border-color: getThemedValue(dark, Checkbox, border-color-hover);
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    %checkboxBase-mobile {
+        left: $boxSize-mobile;
+        width: $boxSize-mobile;
+        height: $boxSize-mobile;
+    }
+
+    .Checkbox {
+        width: 53px;
+
+        [type="checkbox"] {
+            @extend %checkboxBase-mobile;
+
+            &:checked + span::after {
+                @extend %checkboxBase-mobile;
+                background: url("../../assets/icons/icon-check.svg") 5px 5px no-repeat,
+                    linear-gradient(to bottom right, hsl(208, 99%, 71%), hsl(270, 100%, 74%));
+            }
+        }
+
+        span {
+            height: $boxSize-mobile;
+
+            &::before {
+                @extend %checkboxBase-mobile;
+            }
+        }
     }
 }
