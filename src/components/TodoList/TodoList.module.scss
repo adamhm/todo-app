@@ -46,3 +46,9 @@
         background-color: getThemedValue(dark, TodoList, scrollbar-bg);
     }
 }
+
+@media screen and (max-width: 768px) {
+    .TodoList {
+        margin-top: 18px;
+    }
+}
