@@ -1,9 +1,10 @@
 @import "@assets/styles/themify";
+@import "@assets/styles/variables";
 
 .TodoList {
     margin-top: 22px;
     padding: 0;
-    flex: 0 0 390px;
+    flex: 0 0 $element-size * $max-visible-items;
     display: flex;
     flex-direction: column;
     border-bottom: none;
@@ -50,5 +51,6 @@
 @media screen and (max-width: 768px) {
     .TodoList {
         margin-top: 18px;
+        flex: 0 0 $element-size-mobile * $max-visible-items;
     }
 }
