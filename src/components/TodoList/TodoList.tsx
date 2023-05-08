@@ -19,7 +19,7 @@ function TodoList({ filteredList }: Props) {
         if (hasNewTodo) {
             list.current?.lastElementChild?.scrollIntoView();
         }
-    });
+    }, [filteredList]);
 
     const className =
         filteredList.length >= MAX_VISIBLE_ITEMS

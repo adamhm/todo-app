@@ -1,4 +1,4 @@
-import { useContext, useMemo, useReducer } from "react";
+import { useCallback, useContext, useMemo, useReducer } from "react";
 import { ListFooter, TextBox, TodoFilter, TodoList } from "@components/index";
 import ThemeContext from "@contexts/theme";
 import TodoStateContext from "@contexts/todo-state";
@@ -18,8 +18,10 @@ function TodoPanel() {
     });
     const isMobileView = useMobileView(768);
 
-    const addTodoHandler = (task: string) =>
-        dispatch({ type: "ADD", payload: task });
+    const addTodoHandler = useCallback(
+        (task: string) => dispatch({ type: "ADD", payload: task }),
+        [dispatch]
+    );
 
     const todoStateContext = useMemo(() => ({ state, dispatch }), [state]);
 
