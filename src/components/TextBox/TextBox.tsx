@@ -1,4 +1,4 @@
-import { KeyboardEvent, KeyboardEventHandler, useContext, useRef } from "react";
+import { KeyboardEventHandler, useContext, useRef } from "react";
 import { Checkbox } from "@components/index";
 import ThemeContext from "@contexts/theme";
 import styles from "./TextBox.module.scss";
@@ -9,7 +9,7 @@ function TextBox({ onAddTodo }: Props) {
     const { theme } = useContext(ThemeContext);
     const inputRef = useRef<HTMLInputElement>(null);
 
-    const keyDownHandler: KeyboardEventHandler = (e: KeyboardEvent) => {
+    const keyDownHandler: KeyboardEventHandler = (e) => {
         if (e.key === "Enter" && inputRef.current) {
             localStorage.setItem("newTodo", "true");
             onAddTodo(inputRef.current.value.trim());
