@@ -8,6 +8,7 @@ import styles from "./TodoPanel.module.scss";
 import todos from "../../data/todos.json";
 import todoReducer from "../../state/todoReducer";
 import useMobileView from "../../hooks/use-mobile-view";
+import exhaustiveCheck from "../../utils/exhaustive-check";
 
 function TodoPanel() {
     const { theme, toggleTheme } = useContext(ThemeContext);
@@ -28,6 +29,9 @@ function TodoPanel() {
     let filteredList: Todo[];
 
     switch (state.currentFilter) {
+        case "all":
+            filteredList = state.todos;
+            break;
         case "active":
             filteredList = state.todos.filter((todo) => !todo.completed);
             break;
@@ -35,7 +39,7 @@ function TodoPanel() {
             filteredList = state.todos.filter((todo) => todo.completed);
             break;
         default:
-            filteredList = state.todos;
+            exhaustiveCheck(state.currentFilter);
     }
 
     return (

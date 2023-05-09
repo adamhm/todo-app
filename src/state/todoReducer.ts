@@ -1,5 +1,6 @@
 import { TodoAction, TodoState } from "@typedefs/state";
 import { Todo } from "@typedefs/todo";
+import exhaustiveCheck from "../utils/exhaustive-check";
 
 function todoReducer(state: TodoState, action: TodoAction): TodoState {
     let todos: Todo[];
@@ -45,7 +46,7 @@ function todoReducer(state: TodoState, action: TodoAction): TodoState {
                 todos: state.todos.filter((todo) => todo.id !== action.payload),
             };
         default:
-            return state;
+            return exhaustiveCheck(action);
     }
 }
 
