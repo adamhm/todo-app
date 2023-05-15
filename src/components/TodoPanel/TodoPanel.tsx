@@ -4,11 +4,11 @@ import ThemeContext from "@contexts/theme";
 import TodoStateContext from "@contexts/todo-state";
 import { MoonIcon, SunIcon } from "@assets/icons";
 import { Todo } from "@typedefs/todo";
+import exhaustiveCheck from "@utils/exhaustive-check";
+import useMobileView from "@hooks/use-mobile-view";
+import todos from "@data/todos.json";
+import todoReducer from "@state/todoReducer";
 import styles from "./TodoPanel.module.scss";
-import todos from "../../data/todos.json";
-import todoReducer from "../../state/todoReducer";
-import useMobileView from "../../hooks/use-mobile-view";
-import exhaustiveCheck from "../../utils/exhaustive-check";
 
 function TodoPanel() {
     const { theme, toggleTheme } = useContext(ThemeContext);
