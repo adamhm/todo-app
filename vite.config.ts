@@ -11,7 +11,11 @@ export default defineConfig({
             "@assets": path.resolve(__dirname, "./src/assets"),
             "@components": path.resolve(__dirname, "./src/components"),
             "@contexts": path.resolve(__dirname, "./src/contexts"),
+            "@data": path.resolve(__dirname, "./src/data"),
+            "@hooks": path.resolve(__dirname, "./src/hooks"),
+            "@state": path.resolve(__dirname, "./src/state"),
             "@typedefs": path.resolve(__dirname, "./src/types"),
+            "@utils": path.resolve(__dirname, "./src/utils"),
         },
     },
     plugins: [
