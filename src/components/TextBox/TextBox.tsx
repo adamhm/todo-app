@@ -1,6 +1,7 @@
 import { KeyboardEventHandler, useContext, useRef } from "react";
 import { Checkbox } from "@components/index";
 import ThemeContext from "@contexts/theme";
+import constructStyleClass from "@utils/construct-style-class";
 import styles from "./TextBox.module.scss";
 
 type Props = { onAddTodo: (task: string) => void };
@@ -17,7 +18,7 @@ function TextBox({ onAddTodo }: Props) {
     };
 
     return (
-        <div className={`${styles.TextBox} ${styles[theme]}`}>
+        <div className={constructStyleClass(styles, "TextBox", theme)}>
             <Checkbox />
             <input
                 type="text"

@@ -3,6 +3,7 @@ import { useContext } from "react";
 import TodoStateContext from "@contexts/todo-state";
 import Filter from "@typedefs/filter";
 import ThemeContext from "@contexts/theme";
+import constructStyleClass from "@utils/construct-style-class";
 import styles from "./ListFilter.module.scss";
 
 function ListFilter() {
@@ -14,7 +15,7 @@ function ListFilter() {
     };
 
     return (
-        <div className={`${styles.ListFilter} ${styles[theme]}`}>
+        <div className={constructStyleClass(styles, "ListFilter", theme)}>
             <form action="" aria-label="filter">
                 <input
                     type="radio"

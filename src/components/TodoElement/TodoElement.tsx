@@ -4,6 +4,7 @@ import { useContext, useId } from "react";
 import TodoStateContext from "@contexts/todo-state";
 import { CrossIcon } from "@assets/icons";
 import ThemeContext from "@contexts/theme";
+import constructStyleClass from "@utils/construct-style-class";
 import styles from "./TodoElement.module.scss";
 
 type Props = { todo: Todo };
@@ -14,7 +15,7 @@ function TodoElement({ todo }: Props) {
     const id = useId();
 
     return (
-        <li className={`${styles.TodoElement} ${styles[theme]}`}>
+        <li className={constructStyleClass(styles, "TodoElement", theme)}>
             <Checkbox
                 checked={todo.completed}
                 labelId={id}

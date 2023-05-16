@@ -2,6 +2,7 @@ import { Todo } from "@typedefs/todo";
 import { TodoElement } from "@components/index";
 import { useContext, useEffect, useRef } from "react";
 import ThemeContext from "@contexts/theme";
+import constructStyleClass from "@utils/construct-style-class";
 import styles from "./TodoList.module.scss";
 
 type Props = { filteredList: Todo[] };
@@ -21,10 +22,9 @@ function TodoList({ filteredList }: Props) {
         }
     }, [filteredList]);
 
-    const className =
-        filteredList.length >= MAX_VISIBLE_ITEMS
-            ? `${styles.TodoList} ${styles.full} ${styles[theme]}`
-            : `${styles.TodoList} ${styles[theme]}`;
+    const className = constructStyleClass(styles, "TodoList", theme, {
+        full: filteredList.length >= MAX_VISIBLE_ITEMS,
+    });
 
     return (
         <ul className={className} ref={list}>
