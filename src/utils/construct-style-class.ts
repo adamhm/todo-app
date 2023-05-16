@@ -1,20 +1,20 @@
 export default function constructStyleClass<T extends object>(
     styleObj: T,
-    ...classes: (keyof T | Partial<{ [prop in keyof T]: boolean }>)[]
+    ...classes: (keyof T | { [K in keyof T]?: boolean })[]
 ) {
-    const styleClasses: string[] = [];
+    const styleClasses = new Set<string>();
 
     classes.forEach((c) => {
         if (typeof c !== "object") {
-            styleClasses.push(styleObj[c] as string);
+            styleClasses.add(styleObj[c] as string);
         } else {
-            Object.keys(c).forEach((key) => {
-                if (c[key as keyof T]) {
-                    styleClasses.push(key);
-                }
-            });
+            Object.keys(c)
+                .filter((key) => c[key as keyof T])
+                .forEach((key) =>
+                    styleClasses.add(styleObj[key as keyof T] as string)
+                );
         }
     });
 
-    return styleClasses.join(" ");
+    return Array.from(styleClasses).join(" ");
 }
