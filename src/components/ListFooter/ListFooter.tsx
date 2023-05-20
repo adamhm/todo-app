@@ -21,6 +21,7 @@ function ListFooter({ filteredList }: Props) {
             <button
                 type="button"
                 onClick={() => context?.dispatch({ type: "CLEAR" })}
+                disabled={context?.state.currentFilter === "active"}
             >
                 Clear completed
             </button>

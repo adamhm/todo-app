@@ -27,7 +27,7 @@
         background-color: getThemedValue(light, ListFooter, bg-color);
         color: getThemedValue(light, ListFooter, text-color);
 
-        &:hover {
+        &:not(:disabled):hover {
             color: getThemedValue(light, ListFooter, text-hover);
         }
     }
@@ -42,7 +42,7 @@
         background-color: getThemedValue(dark, ListFooter, bg-color);
         color: getThemedValue(dark, ListFooter, text-color);
 
-        &:hover {
+        &:not(:disabled):hover {
             color: getThemedValue(dark, ListFooter, text-hover);
         }
     }
