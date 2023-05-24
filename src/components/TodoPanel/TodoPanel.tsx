@@ -3,11 +3,10 @@ import { ListFooter, TextBox, TodoFilter, TodoList } from "@components/index";
 import ThemeContext from "@contexts/theme";
 import TodoStateContext from "@contexts/todo-state";
 import { MoonIcon, SunIcon } from "@assets/icons";
-import { Todo } from "@typedefs/todo";
-import exhaustiveCheck from "@utils/exhaustive-check";
 import useMobileView from "@hooks/use-mobile-view";
 import todos from "@data/todos.json";
 import todoReducer from "@state/todoReducer";
+import filterList from "@utils/filter-list";
 import styles from "./TodoPanel.module.scss";
 
 function TodoPanel() {
@@ -26,21 +25,7 @@ function TodoPanel() {
 
     const todoStateContext = useMemo(() => ({ state, dispatch }), [state]);
 
-    let filteredList: Todo[];
-
-    switch (state.currentFilter) {
-        case "all":
-            filteredList = state.todos;
-            break;
-        case "active":
-            filteredList = state.todos.filter((todo) => !todo.completed);
-            break;
-        case "completed":
-            filteredList = state.todos.filter((todo) => todo.completed);
-            break;
-        default:
-            exhaustiveCheck(state.currentFilter);
-    }
+    const filteredList = filterList(state.todos, state.currentFilter);
 
     return (
         <TodoStateContext.Provider value={todoStateContext}>
