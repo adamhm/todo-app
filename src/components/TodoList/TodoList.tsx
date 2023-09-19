@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { Todo } from "@typedefs/todo";
 import { TodoElement } from "@components/index";
 import { useContext, useEffect, useRef } from "react";
@@ -27,11 +28,20 @@ function TodoList({ filteredList }: Props) {
     });
 
     return (
-        <ul className={className} ref={list}>
+        <motion.ul
+            className={className}
+            ref={list}
+            variants={{
+                hidden: { opacity: 0 },
+                visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
+            }}
+            initial="hidden"
+            animate="visible"
+        >
             {filteredList.map((todo) => (
                 <TodoElement todo={todo} key={todo.id} />
             ))}
-        </ul>
+        </motion.ul>
     );
 }
 

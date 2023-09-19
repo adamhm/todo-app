@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { Todo } from "@typedefs/todo";
 import { Checkbox } from "@components/index";
 import { useContext, useId } from "react";
@@ -15,7 +16,14 @@ function TodoElement({ todo }: Props) {
     const id = useId();
 
     return (
-        <li className={constructStyleClass(styles, "TodoElement", theme)}>
+        <motion.li
+            className={constructStyleClass(styles, "TodoElement", theme)}
+            variants={{
+                hidden: { opacity: 0, scale: 0.8 },
+                visible: { opacity: 1, scale: 1 },
+            }}
+            layout
+        >
             <Checkbox
                 checked={todo.completed}
                 labelId={id}
@@ -45,7 +53,7 @@ function TodoElement({ todo }: Props) {
             >
                 <img src={CrossIcon} alt="" />
             </button>
-        </li>
+        </motion.li>
     );
 }
 
